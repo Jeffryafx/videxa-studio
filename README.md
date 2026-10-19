@@ -72,7 +72,7 @@ Videxa Studio se presenta como el estudio personal de Jeff. Antes de publicar, r
 
 ## Videos agregados y publicación
 
-Los ocho videos actuales suman aproximadamente 3.8 GB; uno pesa cerca de 3.26 GB. Se reproducen desde la carpeta local `videos/` durante `npm run dev`, pero no se copian al build ni se suben con el sitio. `.gitignore` excluye los MP4 para evitar agregarlos accidentalmente al repositorio. Las miniaturas JPG sí se publican desde `public/videos/miniaturas/`. Para que visitantes vean los clips en el sitio publicado, primero súbelos a YouTube/Vimeo o un servicio de almacenamiento/CDN y cambia sus entradas en `js/projects.js`; el reproductor mostrará un aviso mientras sigan como archivos locales.
+Los ocho videos actuales suman aproximadamente 3.8 GB; `1003(1).mp4` pesa cerca de 3.26 GB y se mantiene fuera de GitHub porque supera el límite por archivo de Git LFS en cuentas Free/Pro. Los otros siete se guardan en GitHub con Git LFS; necesitan la extensión Git LFS al clonar. Git LFS es control de versiones, no alojamiento de video para la página: los MP4 no se copian al build de Vite y no se reproducirán en el sitio publicado hasta alojarlos en YouTube/Vimeo o un servicio de almacenamiento/CDN. Durante `npm run dev`, los archivos locales se reproducen desde `videos/`. Las miniaturas JPG se publican desde `public/videos/miniaturas/`.
 
 ## Videos y rendimiento
 

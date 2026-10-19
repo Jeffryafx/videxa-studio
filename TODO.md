@@ -57,6 +57,7 @@
 ## 8. Validación y entrega
 
 - [x] Registrar los ocho videos locales en `js/projects.js` y generar sus miniaturas JPG automáticamente.
+- [ ] Enviar los siete MP4 compatibles con Git LFS a GitHub; `1003(1).mp4` queda fuera por su tamaño de 3.26 GB.
 - [ ] Alojar los videos externamente para habilitar la reproducción en el sitio publicado; los archivos locales son solo para desarrollo y suman aproximadamente 3.8 GB.
 - [ ] Revisar los servicios y el texto de presentación de Jeff para confirmar que describen la oferta real de Videxa Studio.
 - [ ] Confirmar el dominio y actualizar `og:url` y `public/sitemap.xml` cuando exista una URL pública.
