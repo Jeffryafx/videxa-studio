@@ -57,8 +57,8 @@
 ## 8. Validación y entrega
 
 - [x] Registrar los ocho videos locales en `js/projects.js` y generar sus miniaturas JPG automáticamente.
-- [ ] Enviar los siete MP4 compatibles con Git LFS a GitHub; `1003(1).mp4` queda fuera por su tamaño de 3.26 GB.
-- [ ] Alojar los videos externamente para habilitar la reproducción en el sitio publicado; los archivos locales son solo para desarrollo y suman aproximadamente 3.8 GB.
+- [x] Enviar siete MP4 con Git LFS a GitHub; `1003(1).mp4` queda fuera por su tamaño de 3.26 GB.
+- [x] Mostrar los siete clips alojados en GitHub LFS desde el reproductor de producción; el video excluido sigue solo en el equipo local.
 - [ ] Revisar los servicios y el texto de presentación de Jeff para confirmar que describen la oferta real de Videxa Studio.
-- [ ] Confirmar el dominio y actualizar `og:url` y `public/sitemap.xml` cuando exista una URL pública.
-- [ ] Ejecutar `npm run build` después de alojar los videos y comprobar la página en móvil y escritorio antes de publicar.
+- [x] Desplegar en `https://videxa-studio-pk9u.vercel.app/` y configurar `og:url`, canonical, sitemap y robots para ese dominio.
+- [x] Ejecutar `npm run build` y validar el despliegue de Vercel.

@@ -53,7 +53,7 @@ function openProject(id) {
   modalMeta.textContent = `${project.duration || '—'} · ${formatLabel(project.orientation)}`;
   modalMedia.classList.toggle('portrait', project.orientation === 'portrait');
   modalMedia.innerHTML = '';
-  if (project.videoType === 'local' && project.video && import.meta.env.DEV) {
+  if (project.videoType === 'direct' && project.video || project.videoType === 'local' && project.video && import.meta.env.DEV) {
     const video = document.createElement('video'); video.controls = true; video.autoplay = true; video.preload = 'none'; video.playsInline = true; video.setAttribute('aria-label', `Video: ${project.title}`); video.src = project.video; if (project.thumbnail) video.poster = project.thumbnail; modalMedia.append(video);
   } else if (project.videoType === 'local' && project.video) {
     modalMedia.innerHTML = `<div class="modal-placeholder"><div><strong>VIDEO<br>NO PUBLICADO</strong><small>ESTE CLIP SOLO ESTÁ DISPONIBLE EN EL EQUIPO LOCAL. ALOJA EL VIDEO EXTERNAMENTE PARA PUBLICARLO.</small></div></div>`;

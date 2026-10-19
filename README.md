@@ -72,7 +72,7 @@ Videxa Studio se presenta como el estudio personal de Jeff. Antes de publicar, r
 
 ## Videos agregados y publicación
 
-Los ocho videos actuales suman aproximadamente 3.8 GB; `1003(1).mp4` pesa cerca de 3.26 GB y se mantiene fuera de GitHub porque supera el límite por archivo de Git LFS en cuentas Free/Pro. Los otros siete se guardan en GitHub con Git LFS; necesitan la extensión Git LFS al clonar. Git LFS es control de versiones, no alojamiento de video para la página: los MP4 no se copian al build de Vite y no se reproducirán en el sitio publicado hasta alojarlos en YouTube/Vimeo o un servicio de almacenamiento/CDN. Durante `npm run dev`, los archivos locales se reproducen desde `videos/`. Las miniaturas JPG se publican desde `public/videos/miniaturas/`.
+Los ocho videos actuales suman aproximadamente 3.8 GB; `1003(1).mp4` pesa cerca de 3.26 GB y se mantiene fuera de GitHub porque supera el límite por archivo de Git LFS en cuentas Free/Pro. Los otros siete se guardan en GitHub con Git LFS y el sitio los reproduce desde el endpoint público de medios de GitHub. GitHub Free incluye 10 GiB de transferencia LFS al mes; cada reproducción consume ancho de banda y, al agotarlo, puede dejar de servir los clips durante el resto del ciclo. Para un sitio con más visitas, migra los enlaces a YouTube, Vimeo o un CDN. Los videos locales se reproducen durante `npm run dev`; `1003(1).mp4`, que no se subió, solo funciona en este equipo. Las miniaturas JPG se publican desde `public/videos/miniaturas/`.
 
 ## Videos y rendimiento
 
