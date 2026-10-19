@@ -1,0 +1,17 @@
+.project-thumbnail > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-media.portrait {
+  width: min(100%, calc((100vh - 190px) * 9 / 16));
+  aspect-ratio: 9 / 16;
+  margin-inline: auto;
+}
+
+.modal-media video {
+  object-fit: contain;
+}
