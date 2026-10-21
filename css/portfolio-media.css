@@ -7,9 +7,25 @@
 }
 
 .modal-media.portrait {
-  width: min(100%, calc((100vh - 190px) * 9 / 16));
+  width: min(100%, calc((100dvh - 200px) * 9 / 16));
+  max-height: none;
   aspect-ratio: 9 / 16;
   margin-inline: auto;
+}
+
+/* En tablet y escritorio el modal completo cabe en pantalla: el video se
+   ajusta también al alto disponible para que la ficha quede siempre visible. */
+@media (min-width: 681px) {
+  .modal-media.portrait {
+    width: min(100%, calc((100dvh - 280px) * 9 / 16));
+  }
+}
+
+/* Móvil en horizontal: hay poca altura, pero sobra ancho. */
+@media (min-width: 681px) and (max-height: 560px) {
+  .modal-media.portrait {
+    width: min(60%, calc((100dvh - 170px) * 9 / 16));
+  }
 }
 
 .modal-media video {

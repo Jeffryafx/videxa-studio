@@ -98,7 +98,7 @@ menuToggle.addEventListener('click', () => setMenu(!menu.classList.contains('ope
 $$('.nav-menu a').forEach((link) => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); menuToggle.focus(); } });
 document.addEventListener('click', (event) => { if (menu.classList.contains('open') && !menu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu(); });
-window.addEventListener('resize', () => { if (window.innerWidth > 680 && menu.classList.contains('open')) closeMenu(); }, { passive: true });
+window.addEventListener('resize', () => { if (window.innerWidth > 820 && menu.classList.contains('open')) closeMenu(); }, { passive: true });
 const header = $('[data-header]'); window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
 
 const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
