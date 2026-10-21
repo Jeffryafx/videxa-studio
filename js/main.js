@@ -25,8 +25,9 @@ function renderFilters() {
 }
 
 function thumbnailMarkup(project) {
-  const image = project.thumbnail ? `<img loading="lazy" src="${project.thumbnail}" alt="Miniatura de ${project.title}" />` : '<div class="project-art" aria-hidden="true"></div>';
-  return `<div class="project-thumbnail ${project.orientation === 'portrait' ? 'portrait' : ''}">${image}<span class="card-play" aria-hidden="true">▶</span><span class="project-placeholder">${project.videoType === 'placeholder' ? 'PRÓXIMAMENTE' : project.title}</span><span class="project-format">${formatLabel(project.orientation)}</span></div>`;
+  const image = project.thumbnail ? `<img loading="lazy" decoding="async" src="${project.thumbnail}" alt="Miniatura de ${project.title}" />` : '<div class="project-art" aria-hidden="true"></div>';
+  const overlay = project.thumbnail ? '' : `<span class="project-placeholder">${project.videoType === 'placeholder' ? 'PRÓXIMAMENTE' : project.title}</span>`;
+  return `<div class="project-thumbnail ${project.orientation === 'portrait' ? 'portrait' : ''}">${image}${overlay}<span class="card-play" aria-hidden="true">▶</span><span class="project-format">${formatLabel(project.orientation)}</span></div>`;
 }
 
 function renderProjects(category = 'Todos') {
@@ -56,16 +57,17 @@ function openProject(id) {
   if (project.videoType === 'direct' && project.video || project.videoType === 'local' && project.video && import.meta.env.DEV) {
     const video = document.createElement('video'); video.controls = true; video.autoplay = true; video.preload = 'none'; video.playsInline = true; video.setAttribute('aria-label', `Video: ${project.title}`); video.src = project.video; if (project.thumbnail) video.poster = project.thumbnail; modalMedia.append(video);
   } else if (project.videoType === 'local' && project.video) {
-    modalMedia.innerHTML = `<div class="modal-placeholder"><div><strong>VIDEO<br>NO PUBLICADO</strong><small>ESTE CLIP SOLO ESTÁ DISPONIBLE EN EL EQUIPO LOCAL. ALOJA EL VIDEO EXTERNAMENTE PARA PUBLICARLO.</small></div></div>`;
+    modalMedia.innerHTML = `<div class="modal-placeholder"><div><strong>VIDEO<br>PRIVADO</strong><small>ESTA PIEZA NO ESTÁ PUBLICADA. ESCRÍBEME Y TE LA COMPARTO.</small></div></div>`;
   } else if (project.videoType === 'youtube' && project.video) {
     const iframe = document.createElement('iframe'); iframe.src = youtubeEmbed(project.video); iframe.title = project.title; iframe.allow = 'autoplay; fullscreen; picture-in-picture'; iframe.allowFullscreen = true; modalMedia.append(iframe);
   } else if (project.videoType === 'vimeo' && project.video) {
     const iframe = document.createElement('iframe'); iframe.src = vimeoEmbed(project.video); iframe.title = project.title; iframe.allow = 'autoplay; fullscreen; picture-in-picture'; iframe.allowFullscreen = true; modalMedia.append(iframe);
   } else {
-    modalMedia.innerHTML = `<div class="modal-placeholder"><div><strong>REEL<br>PRÓXIMAMENTE</strong><small>AÑADE TU VIDEO EN JS/PROJECTS.JS</small></div></div>`;
+    modalMedia.innerHTML = `<div class="modal-placeholder"><div><strong>PRÓXIMAMENTE</strong><small>ESTA PIEZA SE PUBLICARÁ PRONTO. MIENTRAS TANTO, ESCRÍBEME PARA VERLA.</small></div></div>`;
   }
   if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
   document.body.classList.add('modal-open');
+  modal.scrollTop = 0;
   $('[data-modal-close]').focus();
 }
 function closeModal() {
@@ -85,8 +87,18 @@ modal.addEventListener('cancel', (event) => { event.preventDefault(); closeModal
 $$('[data-reel-trigger]').forEach((element) => { element.addEventListener('click', () => openProject(element.dataset.projectId)); element.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(element.dataset.projectId); } }); });
 
 const menuToggle = $('.menu-toggle'); const menu = $('.nav-menu');
-menuToggle.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', String(open)); });
-$$('.nav-menu a').forEach((link) => link.addEventListener('click', () => { menu.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+const setMenu = (open) => {
+  menu.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('menu-open', open);
+  menuToggle.querySelector('.sr-only').textContent = open ? 'Cerrar menú' : 'Abrir menú';
+};
+const closeMenu = () => setMenu(false);
+menuToggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+$$('.nav-menu a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); menuToggle.focus(); } });
+document.addEventListener('click', (event) => { if (menu.classList.contains('open') && !menu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 680 && menu.classList.contains('open')) closeMenu(); }, { passive: true });
 const header = $('[data-header]'); window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
 
 const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });

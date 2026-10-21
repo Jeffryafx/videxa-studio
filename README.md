@@ -20,7 +20,7 @@ npm run preview
 
 ## Agregar, editar o eliminar un proyecto
 
-Toda la galería vive en `js/projects.js`. No necesitas tocar `index.html` ni los componentes visuales. Las ocho entradas actuales corresponden a los videos que agregaste; puedes cambiar los títulos genéricos por nombres de proyecto que estés autorizado a publicar.
+Toda la galería vive en `js/projects.js`. No necesitas tocar `index.html` ni los componentes visuales. Las siete entradas actuales corresponden a los videos publicados; los títulos y descripciones describen lo que se ve en cada clip, cámbialos por el nombre real del proyecto cuando lo tengas.
 
 1. Copia el archivo de video a `videos/` desde el Explorador de archivos de Windows. Los archivos allí se usan solo para desarrollo local; no se incluyen en el build de producción.
 2. La galería usa fotogramas JPG generados desde tus videos en `public/videos/miniaturas/`. Si cambias un video, vuelve a generar su miniatura o reemplázala por una imagen propia.
@@ -72,7 +72,7 @@ Videxa Studio se presenta como el estudio personal de Jeff. Antes de publicar, r
 
 ## Videos agregados y publicación
 
-Los ocho videos actuales suman aproximadamente 3.8 GB; `1003(1).mp4` pesa cerca de 3.26 GB y se mantiene fuera de GitHub porque supera el límite por archivo de Git LFS en cuentas Free/Pro. Los otros siete se guardan en GitHub con Git LFS y el sitio los reproduce desde el endpoint público de medios de GitHub. GitHub Free incluye 10 GiB de transferencia LFS al mes; cada reproducción consume ancho de banda y, al agotarlo, puede dejar de servir los clips durante el resto del ciclo. Para un sitio con más visitas, migra los enlaces a YouTube, Vimeo o un CDN. Los videos locales se reproducen durante `npm run dev`; `1003(1).mp4`, que no se subió, solo funciona en este equipo. Las miniaturas JPG se publican desde `public/videos/miniaturas/`.
+Los siete videos publicados suman aproximadamente 3.8 GB y se guardan en GitHub con Git LFS; el sitio los reproduce desde el endpoint público de medios de GitHub. GitHub Free incluye 10 GiB de transferencia LFS al mes; cada reproducción consume ancho de banda y, al agotarlo, puede dejar de servir los clips durante el resto del ciclo. `1003(1).mp4` (3.26 GB) quedó fuera del catálogo y del repositorio por tamaño: si lo quieres publicar, comprímelo antes. Para un sitio con más visitas, migra los enlaces a YouTube, Vimeo o un CDN. Las miniaturas JPG se publican desde `public/videos/miniaturas/`.
 
 ## Videos y rendimiento
 
@@ -95,8 +95,9 @@ Después importa el repositorio en Vercel. Vercel detectará Vite; si solicita c
 
 ## Estructura
 
-- `index.html`: contenido semántico, SEO y secciones.
+- `index.html`: contenido semántico, SEO, datos estructurados y secciones.
 - `css/styles.css`: identidad visual, responsive, accesibilidad y motion.
 - `js/projects.js`: catálogo editable de proyectos.
 - `js/main.js`: filtros, modal, menú, formulario y microinteracciones.
+- `public/og-image.jpg`: imagen 1200×630 que se muestra al compartir el link (WhatsApp, X, LinkedIn). Si cambias la marca, reemplázala subiendo otra del mismo tamaño.
 - `public/`: favicon, sitemap, robots y manifiesto de rutas.

@@ -10,13 +10,35 @@
     <meta property="og:description" content="Edición con ritmo, intención y una mirada cinematográfica." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://videxa-studio-pk9u.vercel.app/" />
+    <meta property="og:image" content="https://videxa-studio-pk9u.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Videxa Studio — edición de video con ritmo e intención" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Videxa Studio — Edición de video" />
+    <meta name="twitter:description" content="Edición con ritmo, intención y una mirada cinematográfica." />
+    <meta name="twitter:image" content="https://videxa-studio-pk9u.vercel.app/og-image.jpg" />
     <link rel="canonical" href="https://videxa-studio-pk9u.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/portfolio-media.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Videxa Studio",
+        "url": "https://videxa-studio-pk9u.vercel.app/",
+        "image": "https://videxa-studio-pk9u.vercel.app/og-image.jpg",
+        "description": "Estudio personal de edición de video para creadores, marcas y proyectos digitales: reels, shorts, aftermovies y contenido comercial.",
+        "email": "jeffry.editor06@gmail.com",
+        "areaServed": "Online",
+        "knowsAbout": ["Edición de video", "Shorts y Reels", "Aftermovies", "Contenido comercial"]
+      }
+    </script>
     <title>Videxa Studio — Edición de video</title>
   </head>
   <body>
@@ -42,7 +64,7 @@
           <p class="hero-lede">Transformo ideas, streams y grabaciones en videos con ritmo, intención y una mirada que se queda.</p>
           <div class="hero-actions"><a class="button button-primary" href="#portafolio">Ver mi trabajo <span>↘</span></a><a class="text-link" href="#contacto">Hablemos de tu proyecto <span>↗</span></a></div>
         </div>
-        <div class="hero-visual reveal reveal-delay" aria-label="Composición visual placeholder para sustituir por un video o imagen de presentación">
+        <div class="hero-visual reveal reveal-delay" role="img" aria-label="Composición gráfica de Videxa Studio con la frase Cut with intent">
           <div class="visual-noise"></div><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="visual-playhead"><span></span></div>
           <div class="visual-word">CUT<br /><span>WITH</span><br />INTENT</div>
           <div class="visual-meta"><span>VIDEXA STUDIO</span><span>EDICIÓN / POST</span></div>
@@ -51,31 +73,37 @@
         <a class="scroll-cue" href="#reel"><span class="scroll-line"></span><span>Desliza para explorar</span></a>
       </section>
 
-      <section class="ticker" aria-label="Especialidades"><div class="ticker-track"><span>EDITORIAL</span><i>✳</i><span>RITMO</span><i>✳</i><span>NARRATIVA</span><i>✳</i><span>EDITORIAL</span><i>✳</i><span>RITMO</span><i>✳</i><span>NARRATIVA</span></div></section>
+      <section class="ticker" aria-label="Especialidades">
+        <div class="ticker-track">
+          <div class="ticker-group"><span>EDITORIAL</span><i>✳</i><span>RITMO</span><i>✳</i><span>NARRATIVA</span><i>✳</i><span>COLOR</span><i>✳</i><span>SONIDO</span><i>✳</i></div>
+          <div class="ticker-group" aria-hidden="true"><span>EDITORIAL</span><i>✳</i><span>RITMO</span><i>✳</i><span>NARRATIVA</span><i>✳</i><span>COLOR</span><i>✳</i><span>SONIDO</span><i>✳</i></div>
+        </div>
+      </section>
 
       <section class="reel section section-tight" id="reel" data-section>
-        <div class="section-intro reveal"><p class="eyebrow"><span class="eyebrow-line"></span> Reel destacado / 00:01</p><h2>El ritmo también<br /><em>cuenta historias.</em></h2><p>Un reel vertical de aniversario editado para Carretas. Los videos locales se pueden reproducir en la vista de desarrollo de este equipo.</p></div>
+        <div class="section-intro reveal"><p class="eyebrow"><span class="eyebrow-line"></span> Reel destacado / 00:01</p><h2>El ritmo también<br /><em>cuenta historias.</em></h2><p>Un reel vertical de aniversario editado para Carretas: montaje al ritmo de la música, color cálido y texto en pantalla para una pieza hecha para redes.</p></div>
         <div class="reel-frame reveal" data-reel-trigger data-project-id="project-01" tabindex="0" role="button" aria-label="Abrir reel de aniversario de Carretas">
-          <div class="reel-backdrop"><div class="reel-grid"></div><div class="reel-glow"></div><span class="reel-label">REEL<br />DESTACADO</span><span class="reel-time">00:30 / VERTICAL</span></div><button class="play-button" type="button" aria-label="Reproducir reel de aniversario">▶</button><div class="reel-caption"><span>01</span><strong>Reel de aniversario — Carretas</strong><span class="caption-line"></span><span>VER</span></div>
+          <div class="reel-backdrop"><img class="reel-still" src="/videos/miniaturas/project-01.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" /><div class="reel-shade"></div><div class="reel-grid"></div><div class="reel-glow"></div><span class="reel-label">REEL<br />DESTACADO</span><span class="reel-time">00:30 / VERTICAL</span></div><span class="play-button" aria-hidden="true">▶</span><div class="reel-caption"><span>01</span><strong>Reel de aniversario — Carretas</strong><span class="caption-line"></span><span>VER</span></div>
         </div>
       </section>
 
       <section class="portfolio section" id="portafolio" data-section>
-        <div class="section-heading reveal"><div><p class="eyebrow"><span class="eyebrow-line"></span> Portafolio / 00:02</p><h2>Una selección<br /><em>en proceso.</em></h2></div><p class="heading-note">La selección incluye los videos que agregaste. Mientras sigan alojados solo en este equipo, se reproducen únicamente en la vista local del proyecto.</p></div>
+        <div class="section-heading reveal"><div><p class="eyebrow"><span class="eyebrow-line"></span> Portafolio / 00:02</p><h2>Una selección<br /><em>reciente.</em></h2></div><p class="heading-note">Una muestra de trabajos recientes. Abre cada pieza para verla completa.</p></div>
         <div class="filter-row reveal" role="group" aria-label="Filtrar proyectos" data-filters></div>
         <div class="project-grid" data-project-grid></div>
+        <noscript><p class="empty-state">Este portafolio necesita JavaScript para mostrar los videos. Escríbeme a <a href="mailto:jeffry.editor06@gmail.com">jeffry.editor06@gmail.com</a> y te comparto el reel.</p></noscript>
         <p class="empty-state" data-empty hidden>No hay proyectos en esta categoría todavía.</p>
       </section>
 
       <section class="services section" id="servicios" data-section>
         <div class="section-heading reveal"><div><p class="eyebrow"><span class="eyebrow-line"></span> Servicios / 00:03</p><h2>El corte correcto<br /><em>cambia todo.</em></h2></div></div>
         <div class="service-list reveal">
-          <article class="service-item"><span>01</span><div><h3>Videos para YouTube</h3><p>Construcción de ritmo, estructura y claridad para piezas de formato largo.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>02</span><div><h3>Shorts, Reels & TikToks</h3><p>Cortes verticales que encuentran el momento y llegan rápido al punto.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>03</span><div><h3>Gaming & streaming</h3><p>Highlights, clips y momentos con la energía de tu comunidad.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>04</span><div><h3>Aftermovies</h3><p>Resúmenes con atmósfera para que un evento siga sonando después.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>05</span><div><h3>Contenido comercial</h3><p>Videos promocionales que presentan una idea con intención visual.</p></div><span class="service-arrow">↗</span></article>
-          <article class="service-item"><span>06</span><div><h3>De largo a corto</h3><p>Una pieza, varias oportunidades: reutilización pensada para cada formato.</p></div><span class="service-arrow">↗</span></article>
+          <a class="service-item" href="#contacto"><span>01</span><div><h3>Videos para YouTube</h3><p>Construcción de ritmo, estructura y claridad para piezas de formato largo.</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-item" href="#contacto"><span>02</span><div><h3>Shorts, Reels & TikToks</h3><p>Cortes verticales que encuentran el momento y llegan rápido al punto.</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-item" href="#contacto"><span>03</span><div><h3>Gaming & streaming</h3><p>Highlights, clips y momentos con la energía de tu comunidad.</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-item" href="#contacto"><span>04</span><div><h3>Aftermovies</h3><p>Resúmenes con atmósfera para que un evento siga sonando después.</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-item" href="#contacto"><span>05</span><div><h3>Contenido comercial</h3><p>Videos promocionales que presentan una idea con intención visual.</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-item" href="#contacto"><span>06</span><div><h3>De largo a corto</h3><p>Una pieza, varias oportunidades: reutilización pensada para cada formato.</p></div><span class="service-arrow" aria-hidden="true">↗</span></a>
         </div>
       </section>
 
@@ -94,7 +122,7 @@
       </section>
     </main>
 
-    <footer class="site-footer"><div class="footer-top"><a class="brand" href="#inicio" aria-label="Videxa Studio, inicio"><span class="brand-mark" aria-hidden="true">V</span><span>VIDEXA</span><small>STUDIO</small></a><p>Edición con ritmo<br />e intención.</p><div class="footer-links"><a href="#portafolio">Portafolio</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div></div><div class="footer-bottom"><span>© <span data-year></span> Videxa Studio</span><span>Historias con intención <span class="violet">✳</span></span><span>Estudio personal de Jeff</span></div></footer>
+    <footer class="site-footer"><div class="footer-top"><a class="brand" href="#inicio" aria-label="Videxa Studio, inicio"><span class="brand-mark" aria-hidden="true">V</span><span>VIDEXA</span><small>STUDIO</small></a><p>Edición con ritmo<br />e intención.</p><div class="footer-links"><a href="#portafolio">Portafolio</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div></div><div class="footer-bottom"><span>© <span data-year></span> Videxa Studio</span><span>Historias con intención <span class="violet" aria-hidden="true">✳</span></span><span>Estudio personal de Jeff</span></div></footer>
 
     <dialog class="video-modal" data-video-modal aria-labelledby="modal-title"><div class="modal-shell"><button class="modal-close" type="button" data-modal-close aria-label="Cerrar reproductor">×</button><div class="modal-media" data-modal-media></div><div class="modal-info"><div><p class="eyebrow">Now playing</p><h2 id="modal-title" data-modal-title>Proyecto</h2><p data-modal-description></p></div><span data-modal-meta></span></div></div></dialog>
     <script type="module" src="/js/main.js"></script>
